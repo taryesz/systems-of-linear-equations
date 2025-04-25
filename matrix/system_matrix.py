@@ -1,16 +1,16 @@
 import numpy
 
-from constants import MATRIX_SIZE, MAIN_DIAGONAL_VALUE, SECOND_DIAGONAL_VALUE, THIRD_DIAGONAL_VALUE
+from constants import SECOND_DIAGONAL_VALUE, THIRD_DIAGONAL_VALUE
 
-def create_system_matrix() -> numpy.ndarray:
+def create_system_matrix(system_matrix_size, main_diagonal_value) -> numpy.ndarray:
 
-    # Create a square system zero-matrix of size MATRIX_SIZE that will store integers
-    system_matrix = numpy.zeros((MATRIX_SIZE, MATRIX_SIZE), dtype=int)
+    # Create a square system zero-matrix of size MATRIX_SIZE
+    system_matrix = numpy.zeros((system_matrix_size, system_matrix_size))
 
     # Fill the matrix with values as described in the task's description
-    for i in range(MATRIX_SIZE):
+    for i in range(system_matrix_size):
         
-        system_matrix[i][i] = MAIN_DIAGONAL_VALUE
+        system_matrix[i][i] = main_diagonal_value
         
         if i > 0:
             system_matrix[i][i - 1] = SECOND_DIAGONAL_VALUE
