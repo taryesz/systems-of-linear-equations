@@ -18,7 +18,7 @@ def solve_using_lu_decomposition(system_matrix:numpy.ndarray, system_matrix_size
 
     forward_substitution = numpy.linalg.inv(lower_triangle) @ excitation_vector
     backward_substitution = numpy.linalg.inv(upper_triangle) @ forward_substitution
-  
+
     residual_norm = numpy.linalg.norm(create_residual_vector(system_matrix, backward_substitution, excitation_vector))
 
     finish_time = time.time()

@@ -10,6 +10,6 @@ def create_excitation_vector(system_matrix_size) -> numpy.ndarray:
 
     # Fill the vector with values gained from a formula defined in the task's description
     for i in range(system_matrix_size): 
-        excitation_vector[i] = sin(i * (int(STUDENT_INDEX[2]) + 1))
+        excitation_vector[i] = sin((i+1) * (int(STUDENT_INDEX[2]) + 1))
 
     return excitation_vector

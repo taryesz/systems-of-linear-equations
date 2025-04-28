@@ -22,8 +22,6 @@ time_to_find_solution_lu_decomposition_vector = []
 
 for size in system_matrix_sizes:
 
-    print("Size:", size)
-
     system_matrix = create_system_matrix(size, main_diagonal_value)
     excitation_vector = create_excitation_vector(size)
 
@@ -37,3 +35,4 @@ for size in system_matrix_sizes:
     time_to_find_solution_lu_decomposition_vector.append(time_to_find_solution_lu_decomposition)
 
 plot_time_dependence(time_to_find_solution_jacobi_vector, time_to_find_solution_gauss_seidel_vector, time_to_find_solution_lu_decomposition_vector, system_matrix_sizes)
+plot_time_dependence(time_to_find_solution_jacobi_vector, time_to_find_solution_gauss_seidel_vector, time_to_find_solution_lu_decomposition_vector, system_matrix_sizes, scale='log')
